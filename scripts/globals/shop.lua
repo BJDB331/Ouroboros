@@ -412,21 +412,21 @@ xi.shop =
     {
         [curio.medicine] =
         {
-            4112,     300,      xi.ki.RHAPSODY_IN_WHITE,   -- Potion
-            4116,     600,      xi.ki.RHAPSODY_IN_UMBER,   -- Hi-Potion
-            4120,    1200,    xi.ki.RHAPSODY_IN_CRIMSON,   -- X-Potion
+            15840,  1000000,    xi.ki.RHAPSODY_IN_WHITE,   -- Kupos Ring
+            4116,     600,      xi.ki.RHAPSODY_IN_WHITE,   -- Hi-Potion
+            4120,    1200,    xi.ki.RHAPSODY_IN_WHITE,   -- X-Potion
             -- 4128,     650,      xi.ki.RHAPSODY_IN_WHITE,   -- Ether / Temporarily(?) removed by SE June 2021
-            4132,    1300,      xi.ki.RHAPSODY_IN_UMBER,   -- Hi-Ether
-            4136,    3000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Super Ether
-            4145,   15000,      xi.ki.RHAPSODY_IN_AZURE,   -- Elixir
+            4132,    1300,      xi.ki.RHAPSODY_IN_WHITE,   -- Hi-Ether
+            4136,    3000,    xi.ki.RHAPSODY_IN_WHITE,   -- Super Ether
+            4145,   15000,      xi.ki.RHAPSODY_IN_WHITE,   -- Elixir
             4148,     300,      xi.ki.RHAPSODY_IN_WHITE,   -- Antidote
-            4150,    1000,      xi.ki.RHAPSODY_IN_UMBER,   -- Eye Drops
-            4151,     700,      xi.ki.RHAPSODY_IN_UMBER,   -- Echo Drops
+            4150,    1000,      xi.ki.RHAPSODY_IN_WHITE,   -- Eye Drops
+            4151,     700,      xi.ki.RHAPSODY_IN_WHITE,   -- Echo Drops
             4156,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Mulsum
             4164,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Prism Powder
             4165,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Silent Oil
             4166,     250,      xi.ki.RHAPSODY_IN_WHITE,   -- Deodorizer
-            4172,    1000,      xi.ki.RHAPSODY_IN_AZURE,   -- Reraiser
+            4172,    1000,      xi.ki.RHAPSODY_IN_WHITE,   -- Reraiser
         },
 
         [curio.ammunition] =
@@ -437,11 +437,11 @@ xi.shop =
             4221,    1350,      xi.ki.RHAPSODY_IN_WHITE,   -- Beetle Quiver
             4226,    2040,      xi.ki.RHAPSODY_IN_WHITE,   -- Silver Quiver
             4222,    2340,      xi.ki.RHAPSODY_IN_WHITE,   -- Horn Quiver
-            5333,    3150,      xi.ki.RHAPSODY_IN_UMBER,   -- Sleep Quiver
-            4223,    3500,      xi.ki.RHAPSODY_IN_UMBER,   -- Scorpion Quiver
-            4224,    7000,      xi.ki.RHAPSODY_IN_AZURE,   -- Demon Quiver
-            5332,    8800,      xi.ki.RHAPSODY_IN_AZURE,   -- Kabura Quiver
-            5819,    9900,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Antlion Quiver
+            5333,    3150,      xi.ki.RHAPSODY_IN_WHITE,   -- Sleep Quiver
+            4223,    3500,      xi.ki.RHAPSODY_IN_WHITE,   -- Scorpion Quiver
+            4224,    7000,      xi.ki.RHAPSODY_IN_WHITE,   -- Demon Quiver
+            5332,    8800,      xi.ki.RHAPSODY_IN_WHITE,   -- Kabura Quiver
+            5819,    9900,    xi.ki.RHAPSODY_IN_WHITE,   -- Antlion Quiver
             4227,     400,      xi.ki.RHAPSODY_IN_WHITE,   -- Bronze Bolt Quiver
             5334,     800,      xi.ki.RHAPSODY_IN_WHITE,   -- Blind Bolt Quiver
             5335,    1250,      xi.ki.RHAPSODY_IN_WHITE,   -- Acid Bolt Quiver
@@ -449,24 +449,24 @@ xi.shop =
             5339,    2100,      xi.ki.RHAPSODY_IN_WHITE,   -- Bloody Bolt Quiver
             5338,    2100,      xi.ki.RHAPSODY_IN_WHITE,   -- Venom Bolt Quiver
             5336,    2400,      xi.ki.RHAPSODY_IN_WHITE,   -- Holy Bolt Quiver
-            4228,    3500,      xi.ki.RHAPSODY_IN_UMBER,   -- Mythril Bolt Quiver
-            4229,    5580,      xi.ki.RHAPSODY_IN_AZURE,   -- Darksteel Bolt Quiver
-            5820,    9460,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Darkling Bolt Quiver
-            5821,    9790,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Fusion Bolt Quiver
+            4228,    3500,      xi.ki.RHAPSODY_IN_WHITE,   -- Mythril Bolt Quiver
+            4229,    5580,      xi.ki.RHAPSODY_IN_WHITE,   -- Darksteel Bolt Quiver
+            5820,    9460,    xi.ki.RHAPSODY_IN_WHITE,   -- Darkling Bolt Quiver
+            5821,    9790,    xi.ki.RHAPSODY_IN_WHITE,   -- Fusion Bolt Quiver
             5359,     400,      xi.ki.RHAPSODY_IN_WHITE,   -- Bronze Bullet Pouch
             5363,    1920,      xi.ki.RHAPSODY_IN_WHITE,   -- Bullet Pouch
             5341,    2400,      xi.ki.RHAPSODY_IN_WHITE,   -- Spartan Bullet Pouch
             5353,    4800,      xi.ki.RHAPSODY_IN_UMBER,   -- Iron Bullet Pouch
             5340,    4800,      xi.ki.RHAPSODY_IN_UMBER,   -- Silver Bullet Pouch
-            5342,    7100,      xi.ki.RHAPSODY_IN_AZURE,   -- Corsair Bullet Pouch
-            5416,    7600,      xi.ki.RHAPSODY_IN_AZURE,   -- Steel Bullet Pouch
-            5822,    9680,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Dweomer Bullet Pouch
-            5823,    9900,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Oberon Bullet Pouch
+            5342,    7100,      xi.ki.RHAPSODY_IN_WHITE,   -- Corsair Bullet Pouch
+            5416,    7600,      xi.ki.RHAPSODY_IN_WHITE,   -- Steel Bullet Pouch
+            5822,    9680,    xi.ki.RHAPSODY_IN_WHITE,   -- Dweomer Bullet Pouch
+            5823,    9900,    xi.ki.RHAPSODY_IN_WHITE,   -- Oberon Bullet Pouch
             6299,    1400,      xi.ki.RHAPSODY_IN_WHITE,   -- Shuriken Pouch
             6297,    2280,      xi.ki.RHAPSODY_IN_WHITE,   -- Juji Shuriken Pouch
-            6298,    4640,      xi.ki.RHAPSODY_IN_UMBER,   -- Manji Shuriken Pouch
-            6302,    7000,      xi.ki.RHAPSODY_IN_AZURE,   -- Fuma Shuriken Pouch
-            6303,    9900,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Iga Shuriken Pouch
+            6298,    4640,      xi.ki.RHAPSODY_IN_WHITE,   -- Manji Shuriken Pouch
+            6302,    7000,      xi.ki.RHAPSODY_IN_WHITE,   -- Fuma Shuriken Pouch
+            6303,    9900,    xi.ki.RHAPSODY_IN_WHITE,   -- Iga Shuriken Pouch
         },
 
         [curio.ninjutsuTools] =
@@ -484,67 +484,67 @@ xi.shop =
             5318,    5000,      xi.ki.RHAPSODY_IN_WHITE,   -- Toolbag (Kodoku)
             5319,    3000,      xi.ki.RHAPSODY_IN_WHITE,   -- Toolbag (Shinobi-Tabi)
             5417,    3000,      xi.ki.RHAPSODY_IN_WHITE,   -- Toolbag (Sanjaku-Tenugui)
-            5734,    5000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Toolbag (Soshi)
+            5734,    5000,    xi.ki.RHAPSODY_IN_WHITE,   -- Toolbag (Soshi)
         },
         [curio.foodStuffs] =
         {
             4378,      60,      xi.ki.RHAPSODY_IN_WHITE,   -- Selbina Milk
             4299,     100,      xi.ki.RHAPSODY_IN_WHITE,   -- Orange au Lait
             5703,     100,      xi.ki.RHAPSODY_IN_WHITE,   -- Uleguerand Milk
-            4300,     300,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Apple au Lait
-            4301,     600,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Pear au Lait
+            4300,     300,    xi.ki.RHAPSODY_IN_WHITE,   -- Apple au Lait
+            4301,     600,    xi.ki.RHAPSODY_IN_WHITE,   -- Pear au Lait
             4422,     200,      xi.ki.RHAPSODY_IN_WHITE,   -- Orange Juice
-            4424,    1100,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Melon Juice
-            4558,    2000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Yagudo Drink
+            4424,    1100,    xi.ki.RHAPSODY_IN_WHITE,   -- Melon Juice
+            4558,    2000,    xi.ki.RHAPSODY_IN_WHITE,   -- Yagudo Drink
             4405,     160,      xi.ki.RHAPSODY_IN_WHITE,   -- Rice Ball
             4376,     120,      xi.ki.RHAPSODY_IN_WHITE,   -- Meat Jerky
             4371,     184,      xi.ki.RHAPSODY_IN_WHITE,   -- Grilled Hare
-            4381,     720,      xi.ki.RHAPSODY_IN_UMBER,   -- Meat Mithkabob
+            4381,     720,      xi.ki.RHAPSODY_IN_WHITE,   -- Meat Mithkabob
             -- 4456,     550,      xi.ki.RHAPSODY_IN_WHITE,   -- Boiled Crab / Temporarily(?) removed by SE June 2021
-            4398,    1080,      xi.ki.RHAPSODY_IN_UMBER,   -- Fish Mithkabob
+            4398,    1080,      xi.ki.RHAPSODY_IN_WHITE,   -- Fish Mithkabob
             5166,    1500,      xi.ki.RHAPSODY_IN_WHITE,   -- Coeurl Sub
             4538,     900,      xi.ki.RHAPSODY_IN_WHITE,   -- Roast Pipira
-            6217,     500,      xi.ki.RHAPSODY_IN_AZURE,   -- Anchovy Slice
-            6215,     400,      xi.ki.RHAPSODY_IN_UMBER,   -- Pepperoni Slice
-            5752,    3500,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Pot-auf-feu
+            6217,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Anchovy Slice
+            6215,     400,      xi.ki.RHAPSODY_IN_WHITE,   -- Pepperoni Slice
+            5752,    3500,    xi.ki.RHAPSODY_IN_WHITE,   -- Pot-auf-feu
             4488,    1000,      xi.ki.RHAPSODY_IN_WHITE,   -- Jack-o'-Lantern
-            5176,    5000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Bream Sushi
-            5178,    4000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Dorado Sushi
-            5721,    1500,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Crab Sushi
+            5176,    5000,    xi.ki.RHAPSODY_IN_WHITE,   -- Bream Sushi
+            5178,    4000,    xi.ki.RHAPSODY_IN_WHITE,   -- Dorado Sushi
+            5721,    1500,    xi.ki.RHAPSODY_IN_WHITE,   -- Crab Sushi
             5775,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Chocolate Crepe
-            5766,    1000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Butter Crepe
+            5766,    1000,    xi.ki.RHAPSODY_IN_WHITE,   -- Butter Crepe
             4413,     320,      xi.ki.RHAPSODY_IN_WHITE,   -- Apple Pie
             4421,     800,      xi.ki.RHAPSODY_IN_WHITE,   -- Melon Pie
-            4446,    1200,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Pumpkin Pie
+            4446,    1200,    xi.ki.RHAPSODY_IN_WHITE,   -- Pumpkin Pie
             4410,     344,      xi.ki.RHAPSODY_IN_WHITE,   -- Roast Mushroom
             4510,      24,      xi.ki.RHAPSODY_IN_WHITE,   -- Acorn Cookie
             4394,      12,      xi.ki.RHAPSODY_IN_AZURE,   -- Ginger Cookie
             5782,    1000,      xi.ki.RHAPSODY_IN_WHITE,   -- Sugar Rusk
-            5783,    2000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Chocolate Rusk
+            5783,    2000,    xi.ki.RHAPSODY_IN_WHITE,   -- Chocolate Rusk
             5779,    1000,      xi.ki.RHAPSODY_IN_WHITE,   -- Cherry Macaron
-            5780,    2000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Coffee Macaron
+            5780,    2000,    xi.ki.RHAPSODY_IN_WHITE,   -- Coffee Macaron
             5885,    1000,      xi.ki.RHAPSODY_IN_WHITE,   -- Saltena
-            5886,    2000,      xi.ki.RHAPSODY_IN_AZURE,   -- Elshena
-            5887,    2500,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Montagna
+            5886,    2000,      xi.ki.RHAPSODY_IN_WHITE,   -- Elshena
+            5887,    2500,    xi.ki.RHAPSODY_IN_WHITE,   -- Montagna
             5889,    1000,      xi.ki.RHAPSODY_IN_WHITE,   -- Stuffed Pitaru
-            5890,    2000,      xi.ki.RHAPSODY_IN_AZURE,   -- Poultry Pitaru
-            5891,    2500,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Seafood Pitaru
-            6258,    3000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Shiromochi
-            6262,    3000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Kusamochi
-            6260,    3000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Akamochi
-            5547,   15000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Beef Stewpot
-            5727,   15000,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Zaru Soba
-            4466,     450,    xi.ki.RHAPSODY_IN_CRIMSON,   -- Spicy Cracker
+            5890,    2000,      xi.ki.RHAPSODY_IN_WHITE,   -- Poultry Pitaru
+            5891,    2500,    xi.ki.RHAPSODY_IN_WHITE,   -- Seafood Pitaru
+            6258,    3000,    xi.ki.RHAPSODY_IN_WHITE,   -- Shiromochi
+            6262,    3000,    xi.ki.RHAPSODY_IN_WHITE,   -- Kusamochi
+            6260,    3000,    xi.ki.RHAPSODY_IN_WHITE,   -- Akamochi
+            5547,   15000,    xi.ki.RHAPSODY_IN_WHITE,   -- Beef Stewpot
+            5727,   15000,    xi.ki.RHAPSODY_IN_WHITE,   -- Zaru Soba
+            4466,     450,    xi.ki.RHAPSODY_IN_WHITE,   -- Spicy Cracker
         },
 
         [curio.scrolls] =
         {
             4181,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Instant Warp
             4182,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Instant Reraise
-            5428,     500,      xi.ki.RHAPSODY_IN_AZURE,   -- Instant Retrace
+            5428,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Instant Retrace
             5988,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Instant Protect
             5989,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Instant Shell
-            5990,     500,      xi.ki.RHAPSODY_IN_UMBER,   -- Instant Stoneskin
+            5990,     500,      xi.ki.RHAPSODY_IN_WHITE,   -- Instant Stoneskin
         },
 
         [curio.keys] =

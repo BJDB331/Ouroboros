@@ -180,8 +180,8 @@ xi.homepoint.onTrigger = function(player, csid, index)
     local params = bit.bor(index, bit.lshift(menu[10] < 1 and 0 or 1, 18)) -- Include menu layout
 
     if not player:hasTeleport(xi.teleport.type.HOMEPOINT, hpBit, hpSet) then
-        player:addTeleport(xi.teleport.type.HOMEPOINT, hpBit, hpSet)
-        params = bit.bor(params, 0x10000) -- OR in New HP Bit Flag
+		player:addTeleport(xi.teleport.type.HOMEPOINT, hpBit, hpSet)
+		params = bit.bor(params, 0x10000) -- OR in New HP Bit Flag
     end
 
     if player:hasKeyItem(xi.ki.RHAPSODY_IN_WHITE) then
@@ -261,5 +261,17 @@ xi.homepoint.onEventFinish = function(player, csid, option, event)
         then
             goToHP(player, choice, bit.rshift(option, 16))
         end
+    end
+end
+
+unlockHomepoints = function(player)
+    local index = 0
+
+    for _, i in pairs(homepointData) do
+        hpBit1 = index % 32
+        hpSet1 = math.floor(index / 32)
+
+        player:addTeleport(xi.teleport.type.HOMEPOINT, hpBit1, hpSet1)
+        index = index + 1
     end
 end

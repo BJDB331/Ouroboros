@@ -26,10 +26,10 @@
 #
 # init.txt:
 # ---------------------
-# | 
+# | custom/lua/exp_book.lua
 # | custom/cpp/custom_module.cpp
 # | custom/lua/claim_shield.lua
-# |
+# | custom/lua/shopnpc.lua
 # ---------------------
 #
 # Will load only custom/cpp/custom_module.cpp and custom/lua/claim_shield.lua.
@@ -38,3 +38,5 @@
 
 custom/commands/
 custom/lua/test_npcs_in_gm_home.lua
+custom/lua/EXP_BOOK.lua
+custom/lua/shopnpc.lua
