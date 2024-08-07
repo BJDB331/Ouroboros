@@ -23,7 +23,7 @@ zones[xi.zone.LOWER_JEUNO] =
         MOG_LOCKER_OFFSET             = 6826,  -- Your Mog Locker lease is valid until <timestamp>, kupo.
         FISHING_MESSAGE_OFFSET        = 6941,  -- You can't fish here.
         MYTHIC_LEARNED                = 7147,  -- You have learned the weapon skill [Nothing/King's Justice/Ascetic's Fury/Mystic Boon/Vidohunir/Death Blossom/Mandalic Stab/Atonement/Insurgency/Primal Rend/Mordant Rime/Trueflight/Tachi: Rana/Blade: Kamu/Drakesbane/Garland of Bliss/Expiacion/Leaden Salute/Stringing Pummel/Pyrrhic Kleos/Omniscience]!
-        JUNK_SHOP_DIALOG              = 7148,  -- Hey, how ya doin'? We got the best junk in town.
+        JUNK_SHOP_DIALOG              = 7148,  -- Trade me 10 of any 10,000 dynamis currency to receive a crystal of murky astral detritus. You can also store and withdraw them with me.
         WAAG_DEEG_SHOP_DIALOG         = 7149,  -- Welcome to Waag-Deeg's Magic Shop.
         ORTHONS_GARMENT_SHOP_DIALOG   = 7150,  -- Welcome to Othon's Garments.
         YOSKOLO_SHOP_DIALOG           = 7151,  -- Welcome to the Merry Minstrel's Meadhouse. What'll it be?
@@ -70,6 +70,7 @@ zones[xi.zone.LOWER_JEUNO] =
         ARTIFACT_HAS_BEEN_CHARGED     = 10371, -- Your artifact has been charged with <number> kinetic unit[/s]. Your current stock of kinetic units totals <number>.
         ARTIFACT_TERMINAL_VOLUME      = 10372, -- Your artifact has been charged to its terminal volume of kinetic units.
         SURPLUS_LOST_TO_AETHER        = 10373, -- A surplus of <number> kinetic unit[/s] has been lost to the aether.
+		NPC_TRADE_INSTRUCTIONS		  = 14000, -- Trade me 10 of any 10,000 dynamis currency to receive a crystal of murky astral detritus.	You can also store and withdraw them with me.
     },
     mob =
     {
