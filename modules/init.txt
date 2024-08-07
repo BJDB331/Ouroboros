@@ -30,6 +30,9 @@
 # | custom/cpp/custom_module.cpp
 # | custom/lua/claim_shield.lua
 # | custom/lua/shopnpc.lua
+# | custom/lua/shopnpc2.lua
+# | custom/lua/dynatrader.lua
+# | custom/lua/newdynatrader.lua
 # ---------------------
 #
 # Will load only custom/cpp/custom_module.cpp and custom/lua/claim_shield.lua.
@@ -40,3 +43,6 @@ custom/commands/
 custom/lua/test_npcs_in_gm_home.lua
 custom/lua/EXP_BOOK.lua
 custom/lua/shopnpc.lua
+custom/lua/shopnpc2.lua
+custom/lua/dynatrader.lua
+custom/lua/newdynatrader.lua
