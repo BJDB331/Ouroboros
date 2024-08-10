@@ -243,3 +243,9 @@ xi_search.dSYM
 # Keys and Certs
 **/*.key
 **/*.cert
+/.tmp.driveupload
+modules/custom/dynatrader.lua
+modules/custom/lua/DynaBasHard.lua
+modules/init.txt
+modules/init.txt
+scripts/zones/Lower_Jeuno/npcs/npc_byne_bill_exchange.lua

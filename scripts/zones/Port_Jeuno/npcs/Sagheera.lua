@@ -288,10 +288,6 @@ local function getCosmoCleanseTime(player)
 end
 
 entity.onTrade = function(player, npc, trade)
-    if player:getCurrentMission(xi.mission.log_id.COP) < xi.mission.id.cop.GARDEN_OF_ANTIQUITY then
-        return
-    end
-
     local count = trade:getItemCount()
     local afUpgrade = player:getCharVar('AFupgrade')
 
@@ -353,80 +349,74 @@ entity.onTrade = function(player, npc, trade)
 end
 
 entity.onTrigger = function(player, npc)
-    -- Prevent interaction until player has progressed through COP enough
-    if player:getCurrentMission(xi.mission.log_id.COP) < xi.mission.id.cop.GARDEN_OF_ANTIQUITY then
-        player:showText(npc, ID.text.SAGHEERA_NO_LIMBUS_ACCESS)
+    -- DEFAULT DIALOG (menu)
+    -- event parameters
 
-        -- DEFAULT DIALOG (menu)
-    else
-        -- event parameters
+    local storedABCs     = player:getCurrency('ancient_beastcoin')
+    local playerSagheera = player:getCharVar('SagheeraInteractions')
 
-        local storedABCs     = player:getCurrency('ancient_beastcoin')
-        local playerSagheera = player:getCharVar('SagheeraInteractions')
-
-        -- bitfield of menu options
-        local menu = 0
-        -- bit 0 - has boughten a cosmo cleanse before
-        if not utils.mask.getBit(playerSagheera, 0) then
-            menu = utils.mask.setBit(menu, 0, true)
-        end
-
-        -- bit 1 - show "ask about ancient beastcoins" option
-        -- Is shown once the player selects "Just wanted to chat"
-        if not utils.mask.getBit(playerSagheera, 1) then
-            menu = utils.mask.setBit(menu, 1, true)
-        end
-
-        -- bit 2 - display stored ABCs on "ask about ancient beastcoins"
-        if storedABCs > 0 then
-            menu = utils.mask.setBit(menu, 2, true)
-        end
-
-        -- bit 3 - do not give lengthy explaination on relic restoration
-        -- Set the first time the player encounters option 5
-        if not utils.mask.getBit(playerSagheera, 2) then
-            menu = utils.mask.setBit(menu, 3, true)
-        end
-
-        -- bit 10 - ??? (this bit was set in some captures)
-        menu = utils.mask.setBit(menu, 10, true)
-        -- bit 11 - ??? (this bit was set in some captures)
-        menu = utils.mask.setBit(menu, 11, true)
-        -- bit 12 - show "Retrieve ancient beastcoins" option
-        if storedABCs > 0 then
-            menu = utils.mask.setBit(menu, 12, true)
-        end
-
-        -- bit 13 - player has RHAPSODY_IN_MAUVE (lowers Cosmo Cleanse cost)
-        if player:hasKeyItem(xi.ki.RHAPSODY_IN_MAUVE) then
-            menu = utils.mask.setBit(menu, 13, true)
-        end
-
-        local arg3            = 0
-        local arg4            = 0
-        local afUpgrade       = player:getCharVar('AFupgrade')
-        local gil             = player:getGil()
-        local hasCosmoCleanse = 0
-
-        -- if player is waiting for an upgraded af or relic
-        if afUpgrade > 0 then
-            arg3 = afUpgrade
-            if player:getCharVar('AFupgradeDay') > os.time() then
-                arg4 = afUpgrade
-            end
-        end
-
-        -- calculate COSMO_CLEANSE parameters
-        local cosmoTime = 0
-
-        if player:hasKeyItem(xi.ki.COSMO_CLEANSE) then
-            hasCosmoCleanse = 1
-        else
-            cosmoTime = getCosmoCleanseTime(player)
-        end
-
-        player:startEvent(310, menu, arg3, arg4, gil, cosmoTime, 1, hasCosmoCleanse, storedABCs)
+    -- bitfield of menu options
+    local menu = 0
+    -- bit 0 - has boughten a cosmo cleanse before
+    if not utils.mask.getBit(playerSagheera, 0) then
+        menu = utils.mask.setBit(menu, 0, true)
     end
+
+    -- bit 1 - show "ask about ancient beastcoins" option
+    -- Is shown once the player selects "Just wanted to chat"
+    if not utils.mask.getBit(playerSagheera, 1) then
+        menu = utils.mask.setBit(menu, 1, true)
+    end
+
+    -- bit 2 - display stored ABCs on "ask about ancient beastcoins"
+    if storedABCs > 0 then
+        menu = utils.mask.setBit(menu, 2, true)
+    end
+
+    -- bit 3 - do not give lengthy explaination on relic restoration
+    -- Set the first time the player encounters option 5
+    if not utils.mask.getBit(playerSagheera, 2) then
+        menu = utils.mask.setBit(menu, 3, true)
+    end
+
+    -- bit 10 - ??? (this bit was set in some captures)
+    menu = utils.mask.setBit(menu, 10, true)
+    -- bit 11 - ??? (this bit was set in some captures)
+    menu = utils.mask.setBit(menu, 11, true)
+    -- bit 12 - show "Retrieve ancient beastcoins" option
+    if storedABCs > 0 then
+        menu = utils.mask.setBit(menu, 12, true)
+    end
+
+    -- bit 13 - player has RHAPSODY_IN_MAUVE (lowers Cosmo Cleanse cost)
+    if player:hasKeyItem(xi.ki.RHAPSODY_IN_MAUVE) then
+        menu = utils.mask.setBit(menu, 13, true)
+    end
+
+    local arg3            = 0
+    local arg4            = 0
+    local afUpgrade       = player:getCharVar('AFupgrade')
+    local gil             = player:getGil()
+    local hasCosmoCleanse = 0
+
+    -- if player is waiting for an upgraded af or relic
+    if afUpgrade > 0 then
+        arg3 = afUpgrade
+        if player:getCharVar('AFupgradeDay') > os.time() then
+            arg4 = afUpgrade
+        end
+    end
+
+    -- calculate COSMO_CLEANSE parameters
+    local cosmoTime = 0
+
+    if player:hasKeyItem(xi.ki.COSMO_CLEANSE) then
+        hasCosmoCleanse = 1
+    else
+        cosmoTime = getCosmoCleanseTime(player)
+    end
+
+    player:startEvent(310, menu, arg3, arg4, gil, cosmoTime, 1, hasCosmoCleanse, storedABCs)
 end
 
 entity.onEventUpdate = function(player, csid, option, npc)
