@@ -32,7 +32,9 @@
 # | custom/lua/shopnpc.lua
 # | custom/lua/shopnpc2.lua
 # | custom/lua/newdynatrader.lua
-# | custom/lua/DynaBasHard.lua
+# | custom/lua/Dynaupgrader.lua
+# | custom/lua/unitybattle.lua
+# | custom/lua/ark_angel_ev.lua
 # ---------------------
 #
 # Will load only custom/cpp/custom_module.cpp and custom/lua/claim_shield.lua.
@@ -45,4 +47,6 @@ custom/lua/EXP_BOOK.lua
 custom/lua/shopnpc.lua
 custom/lua/shopnpc2.lua
 custom/lua/newdynatrader.lua
-custom/lua/DynaBasHard.lua
+custom/lua/Dynaupgrader.lua
+custom/lua/unitybattle.lua
+custom/lua/ark_angel_ev.lua

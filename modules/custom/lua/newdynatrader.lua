@@ -11,14 +11,14 @@ local m = Module:new('Dynamis_Trade_NPC')
 local text = {
     ITEM_OBTAINED           = 6390,  -- You obtain: <item>.
     ITEM_CANNOT_BE_OBTAINED = 6384,  -- You cannot obtain the item. Come back after sorting your inventory.
-    -- Trade me 5 of any 10,000 dynamis currency to receive a crystal of murky astral detritus. You can also store and withdraw them with me.
+    -- Trade me 1 of any 10,000 dynamis currency to receive a crystal of murky astral detritus. You can also store and withdraw them with me.
 }
 
 -- Define the currency types and required amount for the trade
 local currencyTypes = {
-    { currencyID = 1457, currencyName = "10,000 Byne Bill", requiredAmount = 5 },
-    { currencyID = 1454, currencyName = "Ranperre Goldpiece", requiredAmount = 5 },
-    { currencyID = 1451, currencyName = "Rimilala Stripshell", requiredAmount = 5 },
+    { currencyID = 1457, currencyName = "10,000 Byne Bill", requiredAmount = 1 },
+    { currencyID = 1454, currencyName = "Ranperre Goldpiece", requiredAmount = 1 },
+    { currencyID = 1451, currencyName = "Rimilala Stripshell", requiredAmount = 1 },
 }
 
 local function onTradeFunc(player, npc, trade)
@@ -49,6 +49,11 @@ end
 local menu  = {}
 local withdrawPage1 = {}
 local tradePage1 = {}
+local tradePage2 = {}
+local tradePage3 = {}
+local tradePage4 = {}
+local tradePage5 = {}
+local tradePage6 = {}
 
 -- We need just a tiny delay to let the previous menu context be cleared out
 -- 'New pages' are actually just whole new menus!
@@ -159,13 +164,13 @@ withdrawPage1 = {
 -- Trade Crystals for Items menu
 tradePage1 = {
     {
-        'Potion (5 Crystals)',
+        'Spharai (5)',
         function(playerArg)
             local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
             if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
-                playerArg:addItem(4112)  -- Insert item ID Potion
+                playerArg:addItem(20480)  -- Insert item ID Potion
                 playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 5)
-                playerArg:messageSpecial(text.ITEM_OBTAINED, 4112)-- Insert item ID
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20480)-- Insert item ID
 				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
             else
                 playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
@@ -173,19 +178,283 @@ tradePage1 = {
         end,
     },
     {
-        'Onion Sword (10 Crystals)',
+        'Mandau (5)',
         function(playerArg)
             local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
-            if storedCrystals >= 10 and playerArg:getFreeSlotsCount() >= 1 then
-                playerArg:addItem(16534)  -- Insert item ID Onion Sword
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20555)  -- Insert item ID Onion Sword
                 playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
-                playerArg:messageSpecial(text.ITEM_OBTAINED, 16534)-- Insert item ID
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20555)-- Insert item ID
 				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
             else
                 playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
             end
         end,
     },
+	{
+        'Excalibur (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20645)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20645)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Ragnarok (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20745)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20745)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Guttler (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20790)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20790)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Bravura (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20835)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20835)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+            'Next page',
+            function(playerArg)
+                menu.options = tradePage2
+                delaySendMenu(playerArg)
+            end,
+        },
+	}
+tradePage2 = {
+	    {
+        'Apocalypse (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20880)  -- Insert item ID
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 5)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20880)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+    {
+        'Gungnir (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20925)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20925)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Kikoku (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20970)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20970)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Amanomurakumo (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21015)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21015)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Mjollnir (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21060)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21060)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Claustrum (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21135)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21135)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+		{
+            'Next page',
+            function(playerArg)
+                menu.options = tradePage3
+                delaySendMenu(playerArg)
+            end,
+        },
+		{
+            'previous page',
+            function(playerArg)
+                menu.options = tradePage1
+                delaySendMenu(playerArg)
+            end,
+        },
+		}
+tradePage3 = {
+	    {
+        'Yoichinoyumi (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21210)  -- Insert item ID
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 5)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21210)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+    {
+        'Annihilator (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21260)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21260)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Kikoku (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(20970)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 20970)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Amanomurakumo (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21015)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21015)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Mjollnir (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21060)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21060)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+	{
+        'Claustrum (5)',
+        function(playerArg)
+            local storedCrystals = playerArg:getCharVar("StoredMurkyAstralDetritus")
+            if storedCrystals >= 5 and playerArg:getFreeSlotsCount() >= 1 then
+                playerArg:addItem(21135)  -- Insert item ID Onion Sword
+                playerArg:setCharVar("StoredMurkyAstralDetritus", storedCrystals - 10)
+                playerArg:messageSpecial(text.ITEM_OBTAINED, 21135)-- Insert item ID
+				playerArg:printToPlayer(string.format("You have %d stored crystal(s) of murky astral detritus.", storedCrystals), xi.msg.channel.SYSTEM_1)
+            else
+                playerArg:printToPlayer('Not enough crystals or inventory space.', xi.msg.channel.SYSTEM_1)
+            end
+        end,
+    },
+		{
+            'Next page',
+            function(playerArg)
+                menu.options = tradePage4
+                delaySendMenu(playerArg)
+            end,
+        },
+		{
+            'previous page',
+            function(playerArg)
+                menu.options = tradePage2
+                delaySendMenu(playerArg)
+            end,
+        },
+
     {
         'Back to Main Menu',
         function(playerArg)
@@ -211,7 +480,7 @@ tradePage1 = {
 }
 
 local function onTriggerFunc(player, npc)
-    player:printToPlayer("Trade me 5 of any 10,000 dynamis currency to receive a crystal of murky astral detritus. You can also store and withdraw them with me.")
+    player:printToPlayer("Trade me 1 of any 10,000 dynamis currency to receive a crystal of murky astral detritus. You can also store and withdraw them with me.")
     menu.options = {
         {
             'Withdraw Crystals',
@@ -237,9 +506,9 @@ m:addOverride('xi.zones.Lower_Jeuno.Zone.onInitialize', function(zone)
         objtype   = xi.objType.NPC,
         name      = 'Dynamis Trader',
         look      = 2290, -- Replace with the appropriate NPC model ID
-        x         = .106,
+        x         = 6.700,
         y         = 0.000,
-        z         = -1.975,
+        z         = -3.419,
         rotation  = 0,
         widescan  = 1,
         onTrigger = onTriggerFunc,

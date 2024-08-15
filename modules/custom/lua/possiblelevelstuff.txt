@@ -1,0 +1,39 @@
+-----------------------------------
+-- Dynamically Adjust Mob Levels for Specific Groups
+-----------------------------------
+require('scripts/globals/common')
+
+local m = Module:new('Mob_Level_Adjuster')
+
+-- Define the groups and the levels you want to set dynamically
+m.groups_to_adjust = {
+    [1] = {min_lvl = 119, max_lvl = 119},
+    [2] = {min_lvl = 119, max_lvl = 119},
+    [3] = {min_lvl = 119, max_lvl = 119},
+	[4] = {min_lvl = 119, max_lvl = 119},
+	[5] = {min_lvl = 119, max_lvl = 119},
+	[6] = {min_lvl = 119, max_lvl = 119},
+	[7] = {min_lvl = 119, max_lvl = 119},
+	[8] = {min_lvl = 119, max_lvl = 119},
+	[9] = {min_lvl = 119, max_lvl = 119},
+	[10] = {min_lvl = 119, max_lvl = 119},
+	
+    -- Add more groups as needed
+}
+
+function m:onMobInitialize(mob)
+        local groupData = self.groups_to_adjust[106]
+        mob:setMobLevel(groupData.min_lvl, groupData.max_lvl)
+end
+
+-- Function to adjust the mob's level dynamically
+function m:onMobSpawn(mob)
+        local groupData = self.groups_to_adjust[106]
+        mob:setMobLevel(groupData.min_lvl, groupData.max_lvl)
+end
+
+return m
+
+
+--look through the zone number, in the DB and list all the mobsIDs
+
