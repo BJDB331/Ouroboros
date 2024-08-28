@@ -4062,7 +4062,7 @@ bool CLuaBaseEntity::delContainerItems(sol::object const& containerID)
 
     if (location >= CONTAINER_ID::MAX_CONTAINER_ID)
     {
-        ShowWarning("Lua::delContainerItems: Attempting to delete items from an invalid container. Defaulting to main inventory.");
+        ShowWarning("Attempting to delete items from an invalid container.");
         return false;
     }
 
@@ -4089,8 +4089,7 @@ bool CLuaBaseEntity::delContainerItems(sol::object const& containerID)
 /************************************************************************
  *  Function: addUsedItem()
  *  Purpose : Add charged item with use timer already on full cooldown
- *  Example : player:addUsedItem(17040) -- Warp Cudgel
- *  Notes   : Currently unused, but should be
+ *  Example : player:addUsedItem(xi.item.WARP_CUDGEL)
  ************************************************************************/
 
 bool CLuaBaseEntity::addUsedItem(uint16 itemID)
@@ -10610,9 +10609,9 @@ bool CLuaBaseEntity::hasPartyJob(uint8 job)
 
 std::optional<CLuaBaseEntity> CLuaBaseEntity::getPartyMember(uint8 member, uint8 allianceparty)
 {
-    if (m_PBaseEntity->objtype != TYPE_PC)
+    if (m_PBaseEntity->objtype == TYPE_NPC)
     {
-        ShowWarning("CLuaBaseEntity::getPartyMember() - Non-PC calling function.");
+        ShowWarning("CLuaBaseEntity::getPartyMember() - NPC calling function.");
         return std::nullopt;
     }
 
@@ -13059,7 +13058,7 @@ bool CLuaBaseEntity::hasStatusEffect(uint16 StatusID, sol::object const& SubType
  *  Notes   : More broad in scope than hasStatusEffect()
  ************************************************************************/
 
-uint16 CLuaBaseEntity::hasStatusEffectByFlag(uint16 StatusID)
+bool CLuaBaseEntity::hasStatusEffectByFlag(uint16 StatusID)
 {
     if (m_PBaseEntity->objtype == TYPE_NPC)
     {
@@ -16672,6 +16671,42 @@ void CLuaBaseEntity::setBehaviour(uint16 behavior)
 }
 
 /************************************************************************
+ *  Function: getLink()
+ *  Purpose : Returns if the current Mob can link or not
+ *  Example : mob:getLink()
+ *  Notes   :
+ ************************************************************************/
+
+uint8 CLuaBaseEntity::getLink()
+{
+    if (m_PBaseEntity->objtype != TYPE_MOB)
+    {
+        ShowWarning("Attempting to get link for invalid entity type (%s).", m_PBaseEntity->getName());
+        return 0;
+    }
+
+    return static_cast<CMobEntity*>(m_PBaseEntity)->m_Link;
+}
+
+/************************************************************************
+ *  Function: setLink()
+ *  Purpose : Sets whether the mob can link or not
+ *  Example : mob:setLink(1)
+ *  Notes   :
+ ************************************************************************/
+
+void CLuaBaseEntity::setLink(uint8 link)
+{
+    if (m_PBaseEntity->objtype != TYPE_MOB)
+    {
+        ShowWarning("Attempting to set link for invalid entity type (%s).", m_PBaseEntity->getName());
+        return;
+    }
+
+    static_cast<CMobEntity*>(m_PBaseEntity)->m_Link = link;
+}
+
+/************************************************************************
  *  Function: getRoamFlags()
  *  Purpose : Returns the current mob roam flags
  *  Example : mob:getRoamFlags()
@@ -18687,6 +18722,8 @@ void CLuaBaseEntity::Register()
 
     SOL_REGISTER("getBehaviour", CLuaBaseEntity::getBehaviour);
     SOL_REGISTER("setBehaviour", CLuaBaseEntity::setBehaviour);
+    SOL_REGISTER("getLink", CLuaBaseEntity::getLink);
+    SOL_REGISTER("setLink", CLuaBaseEntity::setLink);
     SOL_REGISTER("getRoamFlags", CLuaBaseEntity::getRoamFlags);
     SOL_REGISTER("setRoamFlags", CLuaBaseEntity::setRoamFlags);
 
