@@ -50,3 +50,11 @@ custom/lua/newdynatrader.lua
 custom/lua/Dynaupgrader.lua
 custom/lua/unitybattle.lua
 custom/lua/ark_angel_ev.lua
+custom/lua/oboroaug.lua
+custom/lua/NMHunt.lua
+custom/lua/Escha_ZitahNMs.lua
+custom/lua/NMHuntNPC.lua
+custom/lua/Nolan.lua
+custom/lua/xp_guide.lua
+custom/lua/iroha.lua
+custom/lua/skiprankmission.lua
