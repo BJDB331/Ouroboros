@@ -462,9 +462,6 @@ m:addOverride('xi.zones.Bibiki_Bay.Zone.onInitialize', function(zone)
 
         onTrade = function(player, npc, trade)
           if npcUtil.tradeHasExactly(trade, xi.item.CARBUNCLES_RUBY) then -- 1125
-             if player:getCharVar('NaMiSkip') == 1 and
-                player:getCharVar('NaMiSkipy') == 1 and
-                player:getCharVar('NaMiSkipper') == 1 then
                 player:confirmTrade()
                 player:printToPlayer('You have given me what i seek!', 0, npc:getPacketName())
                 player:printToPlayer('There is no going back after i tell you, so choose wisley!', 0, npc:getPacketName())
@@ -473,19 +470,12 @@ m:addOverride('xi.zones.Bibiki_Bay.Zone.onInitialize', function(zone)
              else
                 player:printToPlayer('Leave me be! I am fishing for mah dinner!', 0, npc:getPacketName())
              end
-          end
-        end,
+          end,
+		
 
-        onTrigger = function(player, npc)
-       
-        if player:getCharVar('NaMiSkip') == 1 and
-           player:getCharVar('NaMiSkipy') == 1 and
-           player:getCharVar('NaMiSkipper') == 1 then
+        onTrigger = function(player, npc) 
              player:printToPlayer('So... you want to know my secret huh?', 0, npc:getPacketName())
              player:printToPlayer('I will let you know the secret if you bring me a nice shiny ruby.', 0, npc:getPacketName())
-        else
-             player:printToPlayer('Leave me be! I am fishing for mah dinner!', 0, npc:getPacketName())
-        end
         end,
 
     })
